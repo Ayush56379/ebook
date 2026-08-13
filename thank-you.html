@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful — The 30-Day Productivity Reset</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: var(--bg-light);">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">EBOOK</span>
+        <span class="dynamic-title">The 30-Day Reset</span>
+      </a>
+      <a href="index.html" class="btn btn-secondary btn-sm">Back to Home</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+      <h1 class="section-title" style="margin-bottom: 8px;">PAYMENT SUCCESSFUL! 🎉</h1>
+      <p class="section-subtitle" style="margin-bottom: 24px;">
+        Thank You for Your Purchase!
+      </p>
+      
+      <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 32px; line-height: 1.6;">
+        <b>Your eBook Is Ready:</b> Thank you for purchasing <b>The 30-Day Productivity Reset</b>. You can now download the PDF or start reading it online in your browser.
+      </p>
+
+      <!-- Purchased Product Card -->
+      <div style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; display: flex; align-items: center; gap: 20px; text-align: left; margin-bottom: 32px;">
+        <img src="assets/ebook-cover.jpg" class="dynamic-cover-img" alt="Cover" style="width: 85px; height: 115px; object-fit: contain; border-radius: 8px; box-shadow: var(--shadow-sm); flex-shrink: 0;">
+        <div>
+          <h3 class="dynamic-title" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 4px;">The 30-Day Productivity Reset</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;">By <span class="dynamic-author">Ayush Prajapati</span></p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span style="font-size: 0.8rem; font-weight: 600; background: rgba(10, 102, 194, 0.1); color: var(--accent-blue); padding: 3px 10px; border-radius: 4px;">65 Pages PDF</span>
+            <span style="font-size: 0.8rem; font-weight: 600; background: rgba(2, 132, 199, 0.1); color: var(--teal-accent); padding: 3px 10px; border-radius: 4px;">14 Worksheets</span>
+            <span style="font-size: 0.8rem; font-weight: 600; background: rgba(22, 163, 74, 0.1); color: var(--success-green); padding: 3px 10px; border-radius: 4px;"><span class="dynamic-price">₹199</span> Paid</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="success-actions">
+        <a id="download-pdf-btn" href="The_30-Day_Productivity_Reset_Ayush_Prajapati_FINAL_v2.pdf" download class="btn btn-primary btn-block" style="padding: 18px; font-size: 1.1rem;">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 002 3h12a3 3 0 002-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          DOWNLOAD PDF
+        </a>
+
+        <a id="read-online-btn" href="read.html" class="btn btn-secondary btn-block" style="padding: 18px; font-size: 1.1rem;">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          READ ONLINE
+        </a>
+      </div>
+
+      <!-- Support Box -->
+      <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted);">
+        <p style="font-weight: 600; color: var(--primary-navy); margin-bottom: 4px;">Need Support?</p>
+        <p>Contact us anytime at <a id="support-email-link" href="#" style="color: var(--accent-blue); text-decoration: underline;">support@ayushprajapati.com</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof CONFIG !== 'undefined') {
+        const downloadBtn = document.getElementById('download-pdf-btn');
+        const supportLink = document.getElementById('support-email-link');
+
+        const pdfFile = CONFIG.PDF_FILE || 'The_30-Day_Productivity_Reset_Ayush_Prajapati_FINAL_v2.pdf';
+
+        if (downloadBtn) {
+          downloadBtn.href = pdfFile;
+        }
+
+        if (supportLink && CONFIG.SUPPORT_EMAIL) {
+          supportLink.href = `mailto:${CONFIG.SUPPORT_EMAIL}`;
+          supportLink.textContent = CONFIG.SUPPORT_EMAIL;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

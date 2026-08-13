@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Reader — The 30-Day Productivity Reset</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- PDF.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body style="background: #323639; margin: 0; padding: 0; overflow: hidden; height: 100vh;">
+
+  <!-- Reader Top Bar -->
+  <header class="reader-header">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <a href="thank-you.html" class="reader-btn" style="text-decoration: none;">← Back to Thank You</a>
+      <span style="font-weight: 600; font-size: 0.95rem;" id="reader-title">The 30-Day Productivity Reset</span>
+    </div>
+
+    <!-- Page Controls -->
+    <div class="reader-controls">
+      <button class="reader-btn" id="prev-page">◀ Prev</button>
+      <span style="font-size: 0.85rem;">
+        Page <input type="number" id="page-num" value="1" min="1" style="width: 45px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #FFF; text-align: center; border-radius: 4px; padding: 2px;"> / <span id="page-count">65</span>
+      </span>
+      <button class="reader-btn" id="next-page">Next ▶</button>
+      
+      <span style="border-left: 1px solid rgba(255,255,255,0.2); height: 16px; margin: 0 4px;"></span>
+
+      <button class="reader-btn" id="zoom-out">− Zoom</button>
+      <span id="zoom-level" style="font-size: 0.85rem;">100%</span>
+      <button class="reader-btn" id="zoom-in">+ Zoom</button>
+
+      <a id="download-link" href="The_30-Day_Productivity_Reset_Ayush_Prajapati_FINAL_v2.pdf" download class="reader-btn" style="background: var(--accent-blue); text-decoration: none;">Download PDF</a>
+    </div>
+  </header>
+
+  <!-- Viewer Canvas Container -->
+  <div class="reader-canvas-wrapper" id="reader-container">
+    <canvas id="pdf-canvas" style="box-shadow: 0 8px 24px rgba(0,0,0,0.4); margin: 0 auto; display: block; border-radius: 4px;"></canvas>
+    <iframe id="pdf-fallback" src="" style="width: 100%; height: calc(100vh - 60px); border: none; display: none;"></iframe>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/reader.js"></script>
+</body>
+</html>
