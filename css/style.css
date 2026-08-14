@@ -1112,3 +1112,142 @@ img {
     font-size: 1.45rem;
   }
 }
+
+/* ================================
+   TABLET RESPONSIVE FIX
+   601px – 992px
+   ================================ */
+
+@media (min-width: 601px) and (max-width: 992px) {
+
+  .container {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  /* Header */
+  .header {
+    padding: 13px 0;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+  }
+
+  .header .btn-sm {
+    padding: 9px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 125px;
+    padding-bottom: 75px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 2.7rem;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    max-width: 650px;
+    font-size: 1.1rem;
+  }
+
+  .hero-meta {
+    justify-content: center;
+  }
+
+  .price-tag {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Book */
+  .book-mockup-wrapper {
+    width: 100%;
+  }
+
+  .book-card-3d {
+    width: 310px;
+    transform: rotateY(-6deg) rotateX(2deg);
+  }
+
+  /* Sections */
+  .section {
+    padding: 75px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Cards */
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .inside-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .toolkit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .preview-slider {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  /* Buy */
+  .buy-card {
+    max-width: 720px;
+    padding: 50px 38px;
+  }
+
+  .buy-title {
+    font-size: 2rem;
+  }
+
+  /* Footer */
+  .footer-inner {
+    gap: 30px;
+  }
+
+  .footer-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
