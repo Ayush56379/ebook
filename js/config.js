@@ -28,5 +28,5 @@ const CONFIG = {
     PDF_FILE: "The_30-Day_Productivity_Reset_Ayush_Prajapati_FINAL_v2.pdf",
 
     // Support Email
-    SUPPORT_EMAIL: "support@ayushprajapati.com"
+    SUPPORT_EMAIL: "ayushprajpati6@gmail.com"
 };
