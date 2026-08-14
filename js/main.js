@@ -44,11 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Payment Button Click Handler - Every Buy button opens exact Cashfree Payment URL
     const buyButtons = document.querySelectorAll('.js-buy-btn');
     buyButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            handleCheckoutRedirect();
-        });
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const paymentUrl =
+            (typeof CONFIG !== 'undefined' && CONFIG.CASHFREE_PAYMENT_URL)
+                ? CONFIG.CASHFREE_PAYMENT_URL
+                : "https://payments.cashfree.com/links?code=Hark9ad4a950_AAAAAAASvY";
+
+        // Google Ads conversion + then Cashfree
+        if (typeof gtag_report_conversion === 'function') {
+            gtag_report_conversion(paymentUrl);
+        } else {
+            window.location.href = paymentUrl;
+        }
     });
+});
 
     // 4. FAQ Accordion Handler
     const faqItems = document.querySelectorAll('.faq-item');
