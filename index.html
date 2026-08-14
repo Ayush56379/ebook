@@ -10,6 +10,27 @@
 
   gtag('config', 'AW-16903945533');
 </script>
+  <!-- Event snippet for Ebook Purchase conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16903945533/9ZdbCNKXq-EcEL36tvw-',
+      'value': 1.0,
+      'currency': 'INR',
+      'transaction_id': '',
+      'event_callback': callback
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
+  return false;
+}
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The 30-Day Productivity Reset — Digital Productivity eBook</title>
