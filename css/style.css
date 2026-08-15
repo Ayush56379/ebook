@@ -1252,89 +1252,222 @@ img {
   }
 }
 
-/* ================================
-   THANK YOU / SUCCESS PAGE FIX
-   ================================ */
+/* ==========================================
+   THANK YOU / SUCCESS PAGE
+   PREMIUM RESPONSIVE DESIGN
+   ========================================== */
 
 .success-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  padding: 48px;
+  width: min(640px, calc(100% - 48px));
   max-width: 640px;
-  width: 100%;
-  margin: 120px auto 64px auto;
+  margin: 140px auto 70px;
+  padding: 52px 48px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
   text-align: center;
   box-shadow: var(--shadow-lg);
 }
 
+/* Success Icon */
 .success-icon {
-  width: 72px;
-  height: 72px;
-  background: rgba(22, 163, 74, 0.1);
-  color: var(--success-green);
-  border-radius: 50%;
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 24px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 24px auto;
+
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.10);
+  color: var(--success-green);
+
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
-.success-card h1, 
+/* Main Heading */
+.success-card h1,
 .success-card .section-title {
-  font-size: 2rem;
-  font-weight: 800;
+  margin: 0 0 14px;
+
   color: var(--primary-navy);
-  margin-bottom: 12px;
-  line-height: 1.25;
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
-.success-card p, 
+/* Description */
+.success-card p,
 .success-card .section-subtitle {
-  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto 26px;
+
   color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
+/* Buttons */
 .success-actions {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto 0;
+
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin: 32px 0 0 0;
-  width: 100%;
 }
 
 .success-actions .btn {
   width: 100%;
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
   justify-content: center;
-  min-height: 48px;
+
+  padding: 14px 20px;
+  font-size: 1rem;
 }
 
-/* Mobile & Tablet Specific Adjustments for Thank You Page */
-@media (max-width: 768px) {
+/* Small extra text if present */
+.success-card small {
+  display: block;
+  margin-top: 18px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+
+/* ==========================================
+   TABLET
+   601px – 992px
+   ========================================== */
+
+@media screen and (min-width: 601px) and (max-width: 992px) {
+
   .success-card {
+    width: calc(100% - 56px);
+    max-width: 680px;
+
+    margin: 125px auto 60px;
+    padding: 45px 38px;
+    border-radius: 20px;
+  }
+
+  .success-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .success-card h1,
+  .success-card .section-title {
+    font-size: 2rem;
+  }
+
+  .success-card p,
+  .success-card .section-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .success-actions {
+    max-width: 480px;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+   320px – 600px
+   ========================================== */
+
+@media screen and (max-width: 600px) {
+
+  .success-card {
+    width: calc(100% - 32px);
+    max-width: none;
+
     margin: 100px 16px 40px;
     padding: 32px 20px;
-    border-radius: var(--radius-md);
+
+    border-radius: 18px;
     box-shadow: var(--shadow-md);
   }
 
   .success-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.6rem;
+    width: 62px;
+    height: 62px;
+
     margin-bottom: 20px;
+
+    font-size: 1.65rem;
   }
 
-  .success-card h1, 
+  .success-card h1,
   .success-card .section-title {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
+    line-height: 1.25;
+
+    margin-bottom: 12px;
   }
 
-  .success-card p, 
+  .success-card p,
   .success-card .section-subtitle {
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.55;
+
+    margin-bottom: 22px;
+  }
+
+  .success-actions {
+    width: 100%;
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .success-actions .btn {
+    width: 100%;
+    min-height: 50px;
+
+    padding: 13px 16px;
     font-size: 0.92rem;
+  }
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+   320px – 375px
+   ========================================== */
+
+@media screen and (max-width: 375px) {
+
+  .success-card {
+    width: calc(100% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
+
+    padding: 28px 16px;
+  }
+
+  .success-icon {
+    width: 58px;
+    height: 58px;
+    font-size: 1.5rem;
+  }
+
+  .success-card h1,
+  .success-card .section-title {
+    font-size: 1.4rem;
+  }
+
+  .success-card p,
+  .success-card .section-subtitle {
+    font-size: 0.86rem;
   }
 }
